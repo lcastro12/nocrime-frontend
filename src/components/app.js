@@ -1,45 +1,30 @@
 import React, {Component} from 'react';
-import YTSearch from 'youtube-api-search';
-import Buscador from './buscador';
-import VideoPlayer from './video_player';
-import Sugerencias from './sugerencias';
-import Comentarios from './comentarios/comentarios';
+import CrimeMap from './crime_map';
+import CrimeDisplayer from './crime_displayer';
+import CrimeAdder from './crime_adder';
 
-const API_KEY = 'AIzaSyD7AeJ_fi01jWanRgPibiUCgWuSFb7nFkE';
+const API_KEY = 'hey! missing GOOGLEMAPS KEY';
 class App extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
-      videos: [],
-      selectedVideo: null
+      crimes: [],
+      curentCrime: null
     }
   }
-  
-  
-  buscarVideoYoutube(term) {
-    YTSearch({key: API_KEY, term: term}, (videos) => {
-      this.setState({
-        videos: videos,
-        selectedVideo: videos[0]
-      });
-    });
-  }
-  
-  render() {
+
+  render(){
     return(
       <div>
-        <Buscador buscarVideoYoutube={this.buscarVideoYoutube.bind(this)} />
-        <div className="row margen">
-          <VideoPlayer video={this.state.selectedVideo}/>
-          <Sugerencias videos={this.state.videos} ponerVideo={(video) => {this.setState({selectedVideo: video})}} />  
-        </div>
         <div className="row">
-          <Comentarios/>
+          <CrimeMap />
+          <CrimeDisplayer />
+          <CrimeAdder />
         </div>
-        
       </div>
-    )
+
+    );
   }
 }
 
