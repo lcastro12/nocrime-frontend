@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import CrimeMap from './crime_map';
 import CrimeDisplayer from './crime_displayer';
 import CrimeAdder from './crime_adder';
-
 const API_KEY = 'hey! missing GOOGLEMAPS KEY';
 class App extends Component {
   constructor(props) {
@@ -21,6 +20,7 @@ class App extends Component {
           <CrimeMap />
           <CrimeDisplayer />
           <CrimeAdder />
+
         </div>
       </div>
 
