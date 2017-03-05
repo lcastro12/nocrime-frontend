@@ -4,7 +4,6 @@ import CrimeSelector from './crime_selector';
 //import CitySelector from (./city_selector);
 
 import {SingleDatePicker} from 'react-dates';
-import {DateRangePicker} from 'react-dates';
 
 
 class CrimeDisplayer extends Component {
@@ -36,7 +35,7 @@ class CrimeDisplayer extends Component {
   }
 
   onStartDateFocusChange(focusedF){
-    this.setState({ startDateFocus: focused },() => console.log("end date focus change is: " + this.state.onEndDateFocusChange));
+    this.setState({ startDateFocus: focused },() => console.log("start date focus change is: " + this.state.onEndDateFocusChange));
   }
 
   onEndDateFocusChange(focusedI){
@@ -58,7 +57,7 @@ class CrimeDisplayer extends Component {
   render(){
     return(
       <div>
-        <h2 class="panelTitle">Filtros</h2>
+        <h2 className="panelTitle">Filtros</h2>
         <CrimeSelector
 					title={'Qué tipo de crímenes quieres ver en el mapa?'}
 					setName={'crimes'}
@@ -76,6 +75,8 @@ class CrimeDisplayer extends Component {
           onDateChange={this.onStartDateChange}
           onFocusChange={({ focused }) => { this.setState({ startDateFocus: focused }); }}
         />
+
+        Ubicación, haz click en el mapa donde sucedió el crimen
 
         <SingleDatePicker
           id="endDate-input"
