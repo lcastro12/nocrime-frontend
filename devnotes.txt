@@ -1,0 +1,10 @@
+For dates in selector
+
+https://github.com/pushtell/react-bootstrap-date-picker o mejor https://www.npmjs.com/package/react-bootstrap-date-picker
+
+https://rudeg.github.io/react-input-calendar/
+
+https://github.com/YouCanBookMe/react-datetime
+
+
+react form
