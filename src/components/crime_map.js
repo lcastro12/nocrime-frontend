@@ -5,17 +5,15 @@ class CrimeMap extends Component {
     super(props);
 
     this.state = {
+      markers:[]
     }
   }
 
-  render(){
-    return(
-      <div>
-        Testing Crime map
-      </div>
-
-    );
-  }
+    render() {
+        return (
+            <p>Oye mi perro!</p>
+        );
+    }
 }
 
 export default CrimeMap;
