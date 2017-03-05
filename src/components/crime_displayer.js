@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 import CrimeSelector from './crime_selector';
 //import CitySelector from (./city_selector);
 
+import {SingleDatePicker} from 'react-dates';
+import {DateRangePicker} from 'react-dates';
+
+
 class CrimeDisplayer extends Component {
   constructor(props) {
     super(props);
@@ -10,14 +14,36 @@ class CrimeDisplayer extends Component {
     this.state = {
       startDate: null,
       endDate: null,
-      crimeSelections: ["robo", "violación", "violencia", "drogas", "prostitución"],
+      startDateFocus: null,
+      endDateFocus: null,
+      crimeSelections: ["robo", "violacion", "violencia", "drogas", "prostitucion"],
       selectedCrimes: [],
       city: null
     }
 
     // bind this to selectors
     this.handleCrimeSelection = this.handleCrimeSelection.bind(this);
+    this.onStartDateChange = this.onStartDateChange.bind(this);
+    this.onEndDateChange = this.onEndDateChange.bind(this);
+    this.onEndDateFocusChange = this.onEndDateFocusChange.bind(this);
+    this.onStartDateFocusChange = this.onStartDateFocusChange.bind(this);
   }
+  onStartDateChange(newStartDate){
+    this.setState({ startDate: newStartDate }, () => console.log("start date is: " + this.state.startDate));
+  }
+  onEndDateChange(newEndDate){
+    this.setState({ endDate: newEndDate }, () => console.log("end date is: " + this.state.endDate));
+  }
+
+  onStartDateFocusChange(focusedF){
+    this.setState({ startDateFocus: focused },() => console.log("end date focus change is: " + this.state.onEndDateFocusChange));
+  }
+
+  onEndDateFocusChange(focusedI){
+    this.setState({ endDateFocus: focused });
+  }
+
+
   handleCrimeSelection(e){
     const newSelection = e.target.value;
 		let newSelectionArray;
@@ -32,7 +58,7 @@ class CrimeDisplayer extends Component {
   render(){
     return(
       <div>
-        Testing Crime Displayer
+        <h2 class="panelTitle">Filtros</h2>
         <CrimeSelector
 					title={'Qué tipo de crímenes quieres ver en el mapa?'}
 					setName={'crimes'}
@@ -40,6 +66,27 @@ class CrimeDisplayer extends Component {
 					controlFunc={this.handleCrimeSelection}
 					options={this.state.crimeSelections}
 					selectedOptions={this.state.selectedCrimes} />
+
+        Rango de fechas
+
+        <SingleDatePicker
+          id="startDate-input"
+          date={this.state.startDate}
+          focused={this.state.startDateFocus}
+          onDateChange={this.onStartDateChange}
+          onFocusChange={({ focused }) => { this.setState({ startDateFocus: focused }); }}
+        />
+
+        <SingleDatePicker
+          id="endDate-input"
+          date={this.state.endDate}
+          focused={this.state.endDateFocus}
+          onDateChange={this.onEndDateChange}
+          onFocusChange={({ focused }) => { this.setState({ endDateFocus: focused }); }}
+        />
+
+
+
       </div>
     );
   }
