@@ -89,8 +89,8 @@
               <div id="map"></div>
             </div>
           </div>
-          <!--
-          <div id="panelCrear" class="col-md-4 mapPanel">
+
+          <div  class="col-md-4 mapPanel" id="panelCrear">
             <h2 class="panelTitle">Reporta un Crimen</h2>
             <div class="row">
                 <div class="panelField col-md-6">
@@ -163,17 +163,16 @@
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-3">
-                        <a class="btn-landingPage btn btn-lg btn-default">Aceptar</a>
+                        <a class="btn-landingPage btn btn-lg btn-default irAPanelFiltros">Aceptar</a>
                     </div>
                     <div class="col-md-1"></div>
                     <div class="col-md-5">
-                        <a class="btn-landingPage btn btn-lg btn-default" href="#mapSection">Cancelar</a>
+                        <a class="btn-landingPage btn btn-lg btn-default irAPanelFiltros" href="#mapSection">Cancelar</a>
                     </div>
                 </div>
             </div>
-          </div>
-        </div>
-      </div>--> <!--Termina panel-->
+          </div><!--Termina panel-->
+
 
           <div id="panelFiltros" class="col-md-4 mapPanel">
             <h2 class="panelTitle">Filtros</h2>
@@ -220,7 +219,7 @@
                 <p>Seleccione una Ciudad:</p>
                 <form>
                   <div class="form-group">
-                    <select class="form-control" id="sel1">
+                    <select class="form-control" id="sel2">
                       <option>Bogotá</option>
                       <option>Cali</option>
                       <option>Duitama</option>
@@ -228,6 +227,15 @@
                     </select>
                   </div>
                 </form>
+              </div>
+              <div class="panelField agregarCrimen">
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                    <a id='irAPanelAgregarCrimen' class="btn-agregar btn btn-lg btn-default">Agregar Crimen</a>
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
               </div>
             </div>
 
@@ -241,6 +249,9 @@
   </div>
 
 </div> <!--Map Section-->
+
+
+<div class="container"></div>
 
 <div class="footer">
   <div class="container-fluid">
