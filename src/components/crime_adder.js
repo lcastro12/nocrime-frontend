@@ -48,45 +48,74 @@ class CrimeAdder extends Component {
   render(){
     return(
       <div>
-        <h2 className="panelTitle">Agrega un nuevo crimen</h2>
-
+        <h2 className="panelTitle">Reporta un Crimen</h2>
+        <div className="panelField">
+          <div className="panelField-title">
+            <h3>Denunciado</h3>
+          </div>
+        </div>
+        <div className="panelField-content">
         <ReportedSelector
 					title={'Reporto usted el crimen con las autoridades?'}
 					setName={'reported'}
-					type={'radio'}
+					type={'checkbox'}
 					controlFunc={this.handleReportedSelection}
 					options={this.state.reportedSelections}
 					selectedOptions={this.state.reportedSelection} />
-
-        Fecha
-
-
-        <SingleDatePicker
-          id="startDate-input"
-          date={this.state.date}
-          focused={this.state.dateFocus}
-          onDateChange={this.onStartDateChange}
-          onFocusChange={({ focused }) => { this.setState({ dateFocus: focused }); }}
-        />
-
-        Qué tipo de crimen fue?
-
+        </div>
+        <div className="row">
+          <div className="col-md-6">
+        <div className="panelField">
+          <div className="panelField-title">
+            <h3>Fecha</h3>
+          </div>
+          <div className="panelField-content">
+            <p>Cuando sucedio?</p>
+          <SingleDatePicker
+              id="startDate-input"
+              date={this.state.date}
+              focused={this.state.dateFocus}
+              onDateChange={this.onStartDateChange}
+              onFocusChange={({ focused }) => { this.setState({ dateFocus: focused }); }}
+          />
+          </div>
+        </div>
+          </div>
+          <div className="col-md-6">
+        <div className="panelField">
+          <div className="panelField-title">
+            <h3>Tipo</h3>
+          </div>
+          <div className="panelField-content">
+            <p>Qué tipo de crimen fue?</p>
+            <div className="textArea">
         <CrimeTypeSelector
 					name={'crime-type'}
-					placeholder={'Selecciona el tipo de crimen'}
+					placeholder={'Tipo de crimen'}
 					controlFunc={this.handleCrimeTypeSelect}
 					options={this.state.types}
 					selectedOption={this.state.type} />
-
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div className="panelField">
+          <div className="panelField-title">
+            <h3>Descripcion</h3>
+          </div>
+          <div className="panelField-content">
           <Description
   					title={'Cuenta un poco del crimen que presenciaste'}
   					rows={5}
+            cols={50}
   					resize={false}
   					content={this.state.description}
   					name={'crime-description'}
   					controlFunc={this.handleDescriptionChange}
   					placeholder={'Se lo más específico posible'} />
-
+          </div>
+        </div>
       </div>
 
     );

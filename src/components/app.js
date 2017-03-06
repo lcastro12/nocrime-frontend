@@ -61,7 +61,9 @@ class App extends Component {
 
                   <div id="panelFiltros" className="col-md-4 mapPanel">
                     <CrimeDisplayer/>
-
+                  </div>
+                  <div id="panelCrear" className="col-md-4 mapPanel">
+                    <CrimeAdder />
                   </div>
                 </div>
               </div>
