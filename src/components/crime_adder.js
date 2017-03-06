@@ -116,6 +116,18 @@ class CrimeAdder extends Component {
   					placeholder={'Se lo más específico posible'} />
           </div>
         </div>
+        <div className="panelField aceptarCancelar">
+          <div className="row">
+            <div className="col-md-2"></div>
+            <div className="col-md-3">
+              <a className="btn-landingPage btn btn-lg btn-default irAPanelFiltros">Aceptar</a>
+            </div>
+            <div className="col-md-1"></div>
+            <div className="col-md-5">
+              <a className="btn-landingPage btn btn-lg btn-default irAPanelFiltros" >Cancelar</a>
+            </div>
+          </div>
+        </div>
       </div>
 
     );

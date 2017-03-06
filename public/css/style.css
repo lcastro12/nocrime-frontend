@@ -108,10 +108,13 @@ label
 {
     display:none;
 }
-.textArea
+.textArea,.form-input
 {
-    max-width: 50px!important;
+    max-width: 100%!important;
+    width: 95%;
+    height: 70px;
 }
+
 .footer
 {
     color: #A2A9AF;
