@@ -66,7 +66,7 @@ $("#panelCrear").hide();
 
 $(document).ready(function ()
 {
-  $('#irAPanelAgregarCrimen').click(function ()
+  $('.irAPanelAgregarCrimen').click(function ()
   {
     $("#panelFiltros").hide();
     $("#panelCrear").show();

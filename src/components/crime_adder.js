@@ -56,7 +56,7 @@ class CrimeAdder extends Component {
         </div>
         <div className="panelField-content">
         <ReportedSelector
-					title={'Reporto usted el crimen con las autoridades?'}
+					title={'Reportaste el crimen con las autoridades?'}
 					setName={'reported'}
 					type={'checkbox'}
 					controlFunc={this.handleReportedSelection}
@@ -77,6 +77,7 @@ class CrimeAdder extends Component {
               focused={this.state.dateFocus}
               onDateChange={this.onStartDateChange}
               onFocusChange={({ focused }) => { this.setState({ dateFocus: focused }); }}
+              numberOfMonths={1}
           />
           </div>
         </div>
@@ -113,7 +114,7 @@ class CrimeAdder extends Component {
   					content={this.state.description}
   					name={'crime-description'}
   					controlFunc={this.handleDescriptionChange}
-  					placeholder={'Se lo más específico posible'} />
+  					placeholder={'Cuentanos lo que sucedio.'} />
           </div>
         </div>
         <div className="panelField aceptarCancelar">
