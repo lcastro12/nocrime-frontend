@@ -58,6 +58,17 @@ $(document).ready(function ()
     }
   });
 
+
+  setInterval(function(){
+    if(curPage<2)
+  {
+    navigateRight();
+  }
+  else
+  {
+    curPage=1;
+    pagination();
+  }}, 8000);
 });
 //Selector de Fechas
 flatpickr(".flatpickr");
