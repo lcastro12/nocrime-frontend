@@ -30,6 +30,11 @@ class CrimeDisplayer extends Component {
     this.onStartDateFocusChange = this.onStartDateFocusChange.bind(this);
   }
 
+  componentDidUpdate(){
+    //console.log("calling update map");
+    this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes);
+  }
+
   onStartDateChange(newStartDate)
   {
     this.setState({startDate: newStartDate}, () => console.log("start date is: " + this.state.startDate));
@@ -37,7 +42,7 @@ class CrimeDisplayer extends Component {
 
   onEndDateChange(newEndDate)
   {
-    this.setState({endDate: newEndDate}, () => console.log("end date is: " + this.state.endDate));
+    this.setState({endDate: newEndDate});
   }
 
   onStartDateFocusChange(focusedF)

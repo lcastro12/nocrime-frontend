@@ -43,6 +43,18 @@ class App extends Component {
     })
   }
 
+  updateMapWithFilters(startDate, endDate, selectedCrimes){
+    console.log("app.js calling update map with filter in app.js");
+    console.log("app.js start date is " + startDate);
+    console.log("app.js end date is " + endDate);
+    console.log("app.js selectedCrimes is: " + selectedCrimes);
+
+    // update crimes with a axios call to the API. API IS DONE, only thing left is to call it. 
+
+
+
+  }
+
   render(){
     return(
         <div className="mapSection" id="mapSection">
@@ -60,7 +72,7 @@ class App extends Component {
                   </div>
 
                   <div id="panelFiltros" className="col-md-4 mapPanel">
-                    <CrimeDisplayer/>
+                    <CrimeDisplayer updateMapWithFilters={this.updateMapWithFilters.bind(this)}/>
                   </div>
                   <div id="panelCrear" className="col-md-4 mapPanel">
                     <CrimeAdder />
