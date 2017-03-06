@@ -67,15 +67,14 @@ class CrimeMap extends Component {
         showInfo: false,
       });
     }
-  console.log(nMarkers.length);
+    console.log(nMarkers.length);
     this.setState({markers: nMarkers});
   }
 
 
   render()
   {
-    console.log(this.props.crimes.length != 0 ? this.props.crimes[0].latitude : 'Nada aún');
-    console.log(this.state.markers);
+
     return (
 
         <ClosureListenersExampleGoogleMap
