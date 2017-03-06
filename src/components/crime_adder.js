@@ -63,10 +63,10 @@ class CrimeAdder extends Component {
 
         <SingleDatePicker
           id="startDate-input"
-          date={this.state.startDate}
-          focused={this.state.startDateFocus}
+          date={this.state.date}
+          focused={this.state.dateFocus}
           onDateChange={this.onStartDateChange}
-          onFocusChange={({ focused }) => { this.setState({ startDateFocus: focused }); }}
+          onFocusChange={({ focused }) => { this.setState({ dateFocus: focused }); }}
         />
 
         Qué tipo de crimen fue?
@@ -76,7 +76,7 @@ class CrimeAdder extends Component {
 					placeholder={'Selecciona el tipo de crimen'}
 					controlFunc={this.handleCrimeTypeSelect}
 					options={this.state.types}
-					selectedOption={""} />
+					selectedOption={this.state.type} />
 
           <Description
   					title={'Cuenta un poco del crimen que presenciaste'}
