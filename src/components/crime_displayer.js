@@ -66,24 +66,25 @@ class CrimeDisplayer extends Component {
     this.setState({selectedCrimes: newSelectionArray}, () => console.log('crime selection', this.state.selectedCrimes));
   }
 
+
   render()
   {
     return (
         <div >
           <h2 className="panelTitle">Filtros</h2>
           <div className="panelField">
-          <div className="panelField-title">
-            <h3>Tipo</h3>
-          </div>
-          <div className="panelField-content">
-            <CrimeSelector
-                title={'Qué tipo de crímenes quieres ver en el mapa?'}
-                setName={'crimes'}
-                type={'checkbox'}
-                controlFunc={this.handleCrimeSelection}
-                options={this.state.crimeSelections}
-                selectedOptions={this.state.selectedCrimes}/>
-          </div>
+            <div className="panelField-title">
+              <h3>Tipo</h3>
+            </div>
+            <div className="panelField-content">
+              <CrimeSelector
+                  title={'Qué tipo de crímenes quieres ver en el mapa?'}
+                  setName={'crimes'}
+                  type={'checkbox'}
+                  controlFunc={this.handleCrimeSelection}
+                  options={this.state.crimeSelections}
+                  selectedOptions={this.state.selectedCrimes}/>
+            </div>
           </div>
 
           <div className="panelField">
@@ -92,30 +93,30 @@ class CrimeDisplayer extends Component {
             </div>
             <div className="panelField-content">
               <p>Selecciona las fechas en que quieres hacer tu busqueda.</p>
-            <SingleDatePicker
+              <SingleDatePicker
 
-                id="startDate-input"
-                date={this.state.startDate}
-                focused={this.state.startDateFocus}
-                onDateChange={this.onStartDateChange}
-                onFocusChange={({focused}) =>
-                {
-                  this.setState({startDateFocus: focused});
-                }}
-            />
+                  id="startDate-input"
+                  date={this.state.startDate}
+                  focused={this.state.startDateFocus}
+                  onDateChange={this.onStartDateChange}
+                  onFocusChange={({focused}) =>
+                  {
+                    this.setState({startDateFocus: focused});
+                  }}
+              />
 
-            <SingleDatePicker
-                id="endDate-input"
-                date={this.state.endDate}
-                focused={this.state.endDateFocus}
-                onDateChange={this.onEndDateChange}
-                onFocusChange={({focused}) =>
-                {
-                  this.setState({endDateFocus: focused});
-                }}
-            />
+              <SingleDatePicker
+                  id="endDate-input"
+                  date={this.state.endDate}
+                  focused={this.state.endDateFocus}
+                  onDateChange={this.onEndDateChange}
+                  onFocusChange={({focused}) =>
+                  {
+                    this.setState({endDateFocus: focused});
+                  }}
+              />
 
-          </div>
+            </div>
           </div>
           <div className="panelField agregarCrimen">
             <div className="row">
@@ -127,8 +128,8 @@ class CrimeDisplayer extends Component {
             </div>
           </div>
         </div>
-          );
-          }
+    );
+  }
           }
 
           export default CrimeDisplayer;
