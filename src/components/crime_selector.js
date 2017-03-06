@@ -2,11 +2,11 @@ import React from 'react';
 
 const CrimeSelector = (props) => (
 	<div>
-		<label>{props.title}</label>
-		<div>
+		<label className="panelField-content">{props.title}</label>
+		<div >
 			{props.options.map(option => {
 				return (
-					<label key={option}>
+					<label key={option} className="checkbox-inline">
 						<input
 							name={props.setName}
 							onChange={props.controlFunc}

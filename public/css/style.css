@@ -60,6 +60,13 @@ body
     margin-top: 60%;
     margin-bottom: 10px;
 }
+/*.checkbox-inline*/
+/*{*/
+    /*padding-left: 5px;*/
+    /*padding-right: 2px;*/
+    /*margin-left: 5px;*/
+    /*margin-right: 2px;*/
+/*}*/
 h3
 {
     margin-top: 8px!important;
@@ -69,6 +76,10 @@ h3
 {
     color: #A2A9AF;
 }
+label
+{
+    font-weight: normal;
+}
 .dateSelector
 {
     margin-left: 15px;
@@ -77,6 +88,7 @@ h3
     padding-right: 4px;
 
 }
+
 .list
 {
     height: 25px;

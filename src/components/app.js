@@ -15,16 +15,36 @@ class App extends Component {
 
   render(){
     return(
-      <div>
-        <div className="row">
-          <CrimeMap />
-          <CrimeDisplayer />
-          <CrimeAdder />
+        <div className="mapSection" id="mapSection">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-md-1">
+              </div>
+
+              <div className="col-md-10 principal">
+                <div className="row mapContainer">
+                  <div className="col-md-8 map">
+                    <div className="map-area">
+                      <div id="map"></div>
+                    </div>
+                  </div>
+
+                  <div id="panelFiltros" className="col-md-4 mapPanel">
+                    <CrimeDisplayer/>
+
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-1">
+              </div>
+            </div>
+          </div>
 
         </div>
-      </div>
 
-    );
+
+  );
   }
 }
 
