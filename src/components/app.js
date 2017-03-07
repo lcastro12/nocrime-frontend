@@ -4,7 +4,7 @@ import CrimeMap from './crime_map';
 import CrimeDisplayer from './crime_displayer';
 import CrimeAdder from './crime_adder';
 const API_KEY = 'hey! missing GOOGLEMAPS KEY';
-const ROOT_URL = "http://localhost:1337/api";
+const ROOT_URL =  "https://nocrimeback.herokuapp.com/api";//"http://localhost:1337/api";
 
 class App extends Component {
   constructor(props) {
