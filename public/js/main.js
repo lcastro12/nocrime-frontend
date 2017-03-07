@@ -58,6 +58,17 @@ $(document).ready(function ()
     }
   });
 
+
+  setInterval(function(){
+    if(curPage<2)
+  {
+    navigateRight();
+  }
+  else
+  {
+    curPage=1;
+    pagination();
+  }}, 8000);
 });
 //Selector de Fechas
 flatpickr(".flatpickr");
@@ -66,7 +77,7 @@ $("#panelCrear").hide();
 
 $(document).ready(function ()
 {
-  $('#irAPanelAgregarCrimen').click(function ()
+  $('.irAPanelAgregarCrimen').click(function ()
   {
     $("#panelFiltros").hide();
     $("#panelCrear").show();

@@ -102,7 +102,6 @@ class CrimeDisplayer extends Component {
             <div className="panelField-content">
               <p>Selecciona las fechas en que quieres hacer tu busqueda.</p>
               <SingleDatePicker
-
                   id="startDate-input"
                   date={this.state.startDate}
                   focused={this.state.startDateFocus}
@@ -111,6 +110,7 @@ class CrimeDisplayer extends Component {
                   {
                     this.setState({startDateFocus: focused});
                   }}
+                  numberOfMonths={1}
               />
 
               <SingleDatePicker
@@ -122,6 +122,7 @@ class CrimeDisplayer extends Component {
                   {
                     this.setState({endDateFocus: focused});
                   }}
+                  numberOfMonths={1}
               />
 
             </div>
@@ -130,7 +131,7 @@ class CrimeDisplayer extends Component {
             <div className="row">
               <div className="col-md-3"></div>
               <div className="col-md-6">
-                <a id='irAPanelAgregarCrimen' className="btn-agregar btn btn-lg btn-default">Agregar Crimen</a>
+                <a className="irAPanelAgregarCrimen btn-agregar btn btn-lg btn-default">Agregar Crimen</a>
               </div>
               <div className="col-md-3"></div>
             </div>
