@@ -1,16 +1,16 @@
 {
-  "name": "redux-simple-starter",
+  "name": "nocrime",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "App to report crimes and visualize them",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "repository": "git@github.com:deepdeev/nocrime-frontend.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "deepdeev",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
@@ -36,6 +36,9 @@
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
-    "youtube-api-search": "0.0.5"
+    "youtube-api-search": "0.0.5",
+    "mocha": "^2.4.5",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
   }
 }
