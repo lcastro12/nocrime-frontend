@@ -51,6 +51,7 @@ body
 {
     color: #1abc9c;
 }
+/* l.castro12:Intentar alinear mejor este botón, puede ser con padding-right*/
 .btn-agregar
 {
     border-radius: 0px!important;
@@ -80,6 +81,7 @@ label
 {
     font-weight: normal;
 }
+/*l.castro12:Alinear mejor este elemento */
 .dateSelector
 {
     margin-left: 15px;
@@ -167,3 +169,5 @@ label
 {
     color: #1abc9c; ;
 }
+
+/* l.castro12:Al ver la aplicación en tamaño más pequeño, hay problemas con los elementos. Buscar tener los elementos más responsive/*
