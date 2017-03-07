@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
+
 import {
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-  InfoWindow,
+withGoogleMap,
+GoogleMap,
+Marker,
+InfoWindow,
 } from "react-google-maps";
+
+import fancyMapStyles from "../../public/style/fancyMapStyles.json";
 
 const ClosureListenersExampleGoogleMap = withGoogleMap(props => (
     <GoogleMap
         defaultZoom={15}
-
+        defaultOptions={{ styles: fancyMapStyles }}
         defaultCenter={new google.maps.LatLng(4.60, -74.06)}
     >
 

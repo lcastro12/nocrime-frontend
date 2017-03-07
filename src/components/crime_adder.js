@@ -103,7 +103,7 @@ class CrimeAdder extends Component {
         </div>
         <div className="panelField">
           <div className="panelField-title">
-            <h3>Descripcion</h3>
+            <h3>Descripción</h3>
           </div>
           <div className="panelField-content">
           <Description

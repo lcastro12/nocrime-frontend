@@ -101,6 +101,9 @@ class CrimeDisplayer extends Component {
             </div>
             <div className="panelField-content">
               <p>Selecciona las fechas en que quieres hacer tu busqueda.</p>
+              <div className="row">
+                <div className="col-md-2"></div>
+                <div className="col-md-3">
               <SingleDatePicker
                   id="startDate-input"
                   date={this.state.startDate}
@@ -112,7 +115,9 @@ class CrimeDisplayer extends Component {
                   }}
                   numberOfMonths={1}
               />
-
+                </div>
+                <div className="col-md-1"></div>
+                <div className="col-md-3">
               <SingleDatePicker
                   id="endDate-input"
                   date={this.state.endDate}
@@ -124,7 +129,9 @@ class CrimeDisplayer extends Component {
                   }}
                   numberOfMonths={1}
               />
-
+                </div>
+                <div className="col-md-2"></div>
+              </div>
             </div>
           </div>
           <div className="panelField agregarCrimen">
