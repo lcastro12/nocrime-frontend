@@ -131,3 +131,6 @@ class App extends Component {
 }
 
 export default App;
+
+/*Está muy bien relacionado con la base de datos, los elementos se guardan como es debido. Pero, cuando uno agrega un crimen y luego desea agregar otro, 
+la información del anterior sigue ahí, entonces busquen que la información se actualice junto con el front end /*
