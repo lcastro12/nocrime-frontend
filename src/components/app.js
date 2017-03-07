@@ -15,9 +15,12 @@ class App extends Component {
       markers:[],
       curentCrime: null
     }
+
+    this.updateMapWithFilters = this.updateMapWithFilters.bind(this);
   }
   componentDidMount()
   {
+    console.log("calling in DID MOUNT");
     axios.get(ROOT_URL+ "/crimes")
     .then(response => {
       this.setState({
@@ -38,19 +41,54 @@ class App extends Component {
           showInfo: false,
         });
       }
-      console.log(nMarkers.length);
+      //console.log(nMarkers.length);
       this.setState({markers: nMarkers});
     })
   }
 
-  updateMapWithFilters(startDate, endDate, selectedCrimes){
-    console.log("app.js calling update map with filter in app.js");
-    console.log("app.js start date is " + startDate);
-    console.log("app.js end date is " + endDate);
-    console.log("app.js selectedCrimes is: " + selectedCrimes);
 
-    // update crimes with a axios call to the API. API IS DONE, only thing left is to call it. 
+  updateMapWithFilters(startDateParam, endDateParam, selectedCrimesParam){
+    if (selectedCrimesParam.length === 0){
+      selectedCrimesParam = ["robo", "violacion", "violencia", "drogas", "prostitucion"];
+    }
+    // update crimes with a axios call to the API. API IS DONE, only thing left is to call it.
+    axios.post( ROOT_URL + '/crimes/search', {
+    startDate: startDateParam || new Date(22272000),
+    endDate: endDateParam || new Date(),
+    selectedCrimes: selectedCrimesParam
+    })
+    .then(response => {
+      console.log("Wooo got data from data base");
+      console.log(response.data);
+      //console.log("-------THIS IS-------");
+      //console.log(this);
+      this.setState({
+          crimes: response.data
+      });
 
+      const nMarkers = [];
+
+      for (let i = 0; i < this.state.crimes.length; i++)
+      {
+        console.log("entra for por que si");
+        const position = new google.maps.LatLng(
+            this.state.crimes[i].latitude,
+            this.state.crimes[i].longitude
+        );
+        nMarkers.push({
+          position,
+          content: `This is the secret message`.split(` `)[i],
+          showInfo: false,
+        });
+      }
+      console.log("nMarkers mide: " + nMarkers.length);
+      console.log(nMarkers);
+      this.setState({markers: nMarkers});
+    })
+    .catch(function (error) {
+      console.log("Error calling search API, error below:")
+      console.log(error);
+    });
 
 
   }
@@ -72,7 +110,7 @@ class App extends Component {
                   </div>
 
                   <div id="panelFiltros" className="col-md-4 mapPanel">
-                    <CrimeDisplayer updateMapWithFilters={this.updateMapWithFilters.bind(this)}/>
+                    <CrimeDisplayer updateMapWithFilters={this.updateMapWithFilters}/>
                   </div>
                   <div id="panelCrear" className="col-md-4 mapPanel">
                     <CrimeAdder />

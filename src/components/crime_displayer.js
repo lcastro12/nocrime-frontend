@@ -31,18 +31,20 @@ class CrimeDisplayer extends Component {
   }
 
   componentDidUpdate(){
-    //console.log("calling update map");
-    this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes);
+    console.log("DID UPDATE CRIME DISPLAYER");
+    //this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes);
   }
 
   onStartDateChange(newStartDate)
   {
     this.setState({startDate: newStartDate}, () => console.log("start date is: " + this.state.startDate));
+    //this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes);
   }
 
   onEndDateChange(newEndDate)
   {
-    this.setState({endDate: newEndDate});
+    this.setState({endDate: newEndDate}, () => this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes));
+    //this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes);
   }
 
   onStartDateFocusChange(focusedF)
@@ -68,7 +70,8 @@ class CrimeDisplayer extends Component {
     {
       newSelectionArray = [...this.state.selectedCrimes, newSelection];
     }
-    this.setState({selectedCrimes: newSelectionArray}, () => console.log('crime selection', this.state.selectedCrimes));
+    this.setState({selectedCrimes: newSelectionArray}, () => this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes)); // console.log('crime selection', this.state.selectedCrimes)
+    //this.props.updateMapWithFilters(this.state.startDate, this.state.endDate, this.state.selectedCrimes);
   }
 
 
