@@ -136,3 +136,4 @@ class CrimeAdder extends Component {
 }
 
 export default CrimeAdder;
+/*Luego de agregar, no se quita la información si quiero agregar otro crimen/*
